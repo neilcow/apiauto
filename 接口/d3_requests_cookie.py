@@ -28,3 +28,8 @@ recharge_data = {'mobilephone': '13112341234', 'recharge': '1000'}
 res = session.post(recharge_url, json=recharge_data)
 
 print(res.text)
+# 这个会话最后需要关闭
+session.close()
+
+
+# 封装一个requests类

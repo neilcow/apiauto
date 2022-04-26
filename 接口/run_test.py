@@ -20,6 +20,7 @@ from 接口.HTMLTestRunnerNew import HTMLTestRunner
 from 接口.test_cases import test_register
 from 接口.test_cases.test_recharge import TestRecharge
 from 接口.test_login import TestLogin
+import time
 
 testloader = unittest.TestLoader()
 
@@ -52,7 +53,11 @@ report_path = os.path.join(dir_path, 'report')
 if not os.path.exists(report_path):
     os.mkdir(report_path)
 # file_path = os.path.join(report_path, 'test_result.txt')
-file_path = os.path.join(report_path, 'test_result.html')
+
+ti = str(int(time.time()))
+file_name = 'test_result_{}.html'.format(ti)
+
+file_path = os.path.join(report_path, file_name)
 
 # text ,对于html 一定要用二进制形式打开，wb
 with open(file_path, 'wb') as f:

@@ -37,7 +37,7 @@ active_sheet = wb.active
 
 
 # 获取所有表单的正确用法
-work_sheets = wb.worksheets
+# work_sheets = wb.worksheets
 # 获取某一个表单，1、通过索引去获取
 # sheet = wb.worksheets[0]
 # print(sheet)
@@ -53,21 +53,37 @@ sheet = wb['Sheet1']
 # 读取单个单元格，行和列
 # 行和列 是从1 开始的，不是python当中的 从0 开始的
 # 可以从源码看出，第一个入参是行，第二个入参是列
-cell = sheet.cell(1, 2)
-print(cell)
+# cell = sheet.cell(1, 2)
+# print(cell)
 
 # cell是一个对象，获取cell的值
-print(cell.value)
+# print(cell.value)
 
 # 获取某一行的数据
-print(sheet[1])
+# print(sheet[1])
 
 # 获取某一行的值
-for columm in sheet[1]:
-    print(columm.value)
+# for columm in sheet[1]:
+#     print(columm.value)
 
 # 获取某一列
-print(sheet['C'])
+# print(sheet['C'])
 
 # 获取多行 1到3 行，第3行是包含的
-print(sheet[1:3])
+# print(sheet[1:3])
+
+# 获取所有数据
+total_data = list(sheet.rows)
+print(total_data)
+for row in total_data:
+    for cell in row:
+        print(cell.value)
+
+
+# 写入， 一个单元格
+# 保存，save('文件名称')
+wb.save(r'd:\cases.xlsx')
+# 关闭
+wb.close()
+
+

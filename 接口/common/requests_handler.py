@@ -1,7 +1,7 @@
 import requests
 
 
-class HttpHandler(object):
+class RequestHandler(object):
     def __init__(self):
         self.session = requests.Session()
 

@@ -81,6 +81,7 @@ for row in total_data:
 
 
 # 写入， 一个单元格
+sheet.cell(row, column).value = new_data
 # 保存，save('文件名称')
 wb.save(r'd:\cases.xlsx')
 # 关闭

@@ -18,27 +18,43 @@ tearDown: 每次测试用例完成后，都会执行的方法
 
 """
 import unittest
+
+from 接口.common.excel_handler import ExcelHandler
+from 接口.common.requests_handler import RequestHandler
 from 接口.d4_unittest import visit
+import ddt
+
 
 # url = 'http://localhost:5000/login'
 # data = {"mobliephone": '13112341234', 'pwd': '123456'}
 # headers = {'X-Media-Type': 'test.v2'}
 
-data = {
-    'url': 'http://localhost:5000/login',
-    'data': {"mobliephone": '13112341234', 'pwd': '123456'},
-    'headers': {'X-Media-Type': 'test.v2'}
-}
+test_data = [
+    {'url': 'http://localhost:5000/login',
+     'method': 'post',
+     'data': {"mobliephone": '13112341234', 'pwd': '123456'},
+     'headers': {'X-Media-Type': 'test.v2'},
+     'expected': 'hello world'},
+
+    {'url': 'http://localhost:5000/login',
+     'method': 'post',
+     'data': {"mobliephone": '123456', 'pwd': '123'},
+     'headers': {'X-Media-Type': 'test.v2'},
+     'expected': 'hello world'}
+]
 
 
 # 继承unittest.TestCase
+@ddt.ddt
 class TestLogin(unittest.TestCase):
 
     def setUp(self) -> None:
         self.data = data
 
-    def test_login_success(self):
-        res = visit(self.data['url'], self.data['data'], self.data['headers'])
+    @ddt.data(*test_data)
+    # 将*test_data当中的一组测试数据，赋值到data_info这个参数，相当for循环
+    def test_login_success(self, data_info):
+        res = RequestHandler.visit(data_info['url'], data_info['method'], json=data_info['data'], headers=data_info['headers'])
         self.assertEqual(self.data['expected'], res)
         # try:
         #     self.assertEqual(1, 3-2)

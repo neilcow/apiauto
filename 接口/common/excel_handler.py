@@ -53,6 +53,7 @@ class ExcelHandler():
 
 if __name__ == '__main__':
     excel = ExcelHandler(r'd:\cases.xlsx')
-    # data = excel.read('Sheet1')
-    excel.write(r'd:\cases.xlsx', 'Sheet1', 3, 1, 'data_new')
+    data = excel.read('Sheet1')
+    print(data)
+    # excel.write(r'd:\cases.xlsx', 'Sheet1', 3, 1, 'data_new')
     # print(data)

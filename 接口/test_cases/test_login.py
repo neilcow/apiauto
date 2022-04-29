@@ -29,19 +29,23 @@ import ddt
 # data = {"mobliephone": '13112341234', 'pwd': '123456'}
 # headers = {'X-Media-Type': 'test.v2'}
 
-test_data = [
-    {'url': 'http://localhost:5000/login',
-     'method': 'post',
-     'data': {"mobliephone": '13112341234', 'pwd': '123456'},
-     'headers': {'X-Media-Type': 'test.v2'},
-     'expected': 'hello world'},
+# test_data = [
+#     {'url': 'http://localhost:5000/login',
+#      'method': 'post',
+#      'data': {"mobliephone": '13112341234', 'pwd': '123456'},
+#      'headers': {'X-Media-Type': 'test.v2'},
+#      'expected': 'hello world'},
+#
+#     {'url': 'http://localhost:5000/login',
+#      'method': 'post',
+#      'data': {"mobliephone": '123456', 'pwd': '123'},
+#      'headers': {'X-Media-Type': 'test.v2'},
+#      'expected': 'hello world'}
+# ]
 
-    {'url': 'http://localhost:5000/login',
-     'method': 'post',
-     'data': {"mobliephone": '123456', 'pwd': '123'},
-     'headers': {'X-Media-Type': 'test.v2'},
-     'expected': 'hello world'}
-]
+# 从excel中读取数据
+test_data = ExcelHandler(r'd:\cases.xlsx').read('Sheet1')
+print(test_data)
 
 
 # 继承unittest.TestCase
@@ -49,13 +53,16 @@ test_data = [
 class TestLogin(unittest.TestCase):
 
     def setUp(self) -> None:
-        self.data = data
+        pass
 
     @ddt.data(*test_data)
     # 将*test_data当中的一组测试数据，赋值到data_info这个参数，相当for循环
     def test_login_success(self, data_info):
-        res = RequestHandler.visit(data_info['url'], data_info['method'], json=data_info['data'], headers=data_info['headers'])
-        self.assertEqual(self.data['expected'], res)
+        res = RequestHandler().visit(data_info['method'],
+                                   data_info['url'],
+                                   json=data_info['data'],
+                                   headers=data_info['headers'])
+        self.assertEqual(res, self.data['expected'])
         # try:
         #     self.assertEqual(1, 3-2)
         # except AssertionError as result:
@@ -63,8 +70,8 @@ class TestLogin(unittest.TestCase):
         #     raise AssertionError
 
     def tearDown(self) -> None:
-        print('测试用例执行完毕后要执行的方法')
+        pass
 
 
-if __name__== '__main__':
-    unittest.main
+if __name__ == '__main__':
+    unittest.main()

@@ -2,7 +2,7 @@ import openpyxl
 from openpyxl.worksheet.worksheet import Worksheet
 
 
-class ExcelHandler():
+class ExcelHandler(object):
     def __init__(self, file):
         self.file = file
 

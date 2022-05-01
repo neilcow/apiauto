@@ -3,3 +3,9 @@
 2022-05-01 14:11:47,454 - my_logging.py - 49 - my_logger - WARNING - This is a warning log. - 7832
 2022-05-01 14:11:47,454 - my_logging.py - 50 - my_logger - ERROR - This is a error log. - 7832
 2022-05-01 14:11:47,454 - my_logging.py - 51 - my_logger - CRITICAL - This is a critical log. - 7832
+2022-05-01 21:14:07,197 - demo_log.py - 5 - python_api - INFO - helll world - 7364
+2022-05-01 21:15:09,412 - my_logging.py - 48 - my_logger - DEBUG - This is a debug logging. - 8008
+2022-05-01 21:15:09,412 - my_logging.py - 49 - my_logger - INFO - This is a info logging. - 8008
+2022-05-01 21:15:09,412 - my_logging.py - 50 - my_logger - WARNING - This is a warning logging. - 8008
+2022-05-01 21:15:09,412 - my_logging.py - 51 - my_logger - ERROR - This is a error logging. - 8008
+2022-05-01 21:15:09,412 - my_logging.py - 52 - my_logger - CRITICAL - This is a critical logging. - 8008

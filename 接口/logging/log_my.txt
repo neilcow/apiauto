@@ -1,0 +1,2 @@
+2022-05-01 21:17:37,247 - test_log.py - 5 - python_api - INFO - helll world - 5684
+2022-05-01 21:18:07,463 - test_log.py - 5 - python_api - INFO - This is a debug logging - 1148

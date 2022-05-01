@@ -1,0 +1,5 @@
+2022-05-01 14:11:47,444 - my_logging.py - 47 - my_logger - DEBUG - This is a debug log. - 7832
+2022-05-01 14:11:47,444 - my_logging.py - 48 - my_logger - INFO - This is a info log. - 7832
+2022-05-01 14:11:47,454 - my_logging.py - 49 - my_logger - WARNING - This is a warning log. - 7832
+2022-05-01 14:11:47,454 - my_logging.py - 50 - my_logger - ERROR - This is a error log. - 7832
+2022-05-01 14:11:47,454 - my_logging.py - 51 - my_logger - CRITICAL - This is a critical log. - 7832

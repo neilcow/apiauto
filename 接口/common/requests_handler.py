@@ -11,3 +11,6 @@ class RequestHandler(object):
             return res.json()
         except ValueError:
             print('not json')
+
+    def close_session(self):
+        self.session.close()

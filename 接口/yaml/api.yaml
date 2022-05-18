@@ -9,3 +9,8 @@ excel:
 
 request:
   method: post
+
+# - 的代表是列表
+demo:
+  - test
+  - test2

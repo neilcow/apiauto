@@ -9,3 +9,7 @@ excel:
 
 request:
   method: post
+
+demo:
+- 测试
+- hello

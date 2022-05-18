@@ -41,7 +41,7 @@ from 接口.libs import ddt
 # ]
 
 # 从excel中读取数据
-test_data = ExcelHandler(r'd:\cases.xlsx').read('Sheet1')
+test_data = ExcelHandler(r'd:\cases.xlsx').read('login')
 print(test_data)
 
 
